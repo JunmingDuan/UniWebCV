@@ -1,0 +1,99 @@
+[
+  {
+    "course_en": "Analysis III",
+    "description_en": "undergraduate",
+    "location_en": "École Polytechnique Fédérale de Lausanne",
+    "date_en": "Fall 2022",
+    "course_zh": "数学分析III",
+    "description_zh": "本",
+    "location_zh": "洛桑联邦理工学院",
+    "role": "TA",
+    "date_zh": "2022年秋季学期",
+    "date_ID": 202209
+  },
+  {
+    "course_en": "Advanced Analysis I",
+    "description_en": "undergraduate",
+    "location_en": "École Polytechnique Fédérale de Lausanne",
+    "date_en": "Fall 2021",
+    "course_zh": "数学分析I",
+    "description_zh": "本",
+    "location_zh": "洛桑联邦理工学院",
+    "role": "TA",
+    "date_zh": "2021年秋季学期",
+    "date_ID": 202109
+  },
+  {
+    "course_en": "Numerical Methods of Partial Differential Equations",
+    "description_en": "undergraduate and graduate",
+    "location_en": "Peking University",
+    "date_en": "Fall 2019",
+    "course_zh": "偏微分方程数值解",
+    "description_zh": "本研",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2019年秋季学期",
+    "date_ID": 201909
+  },
+  {
+    "course_en": "Linear Algebra B",
+    "description_en": "undergraduate",
+    "location_en": "Peking University",
+    "date_en": "Fall 2018",
+    "course_zh": "线性代数B",
+    "description_zh": "本",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2018年秋季学期",
+    "date_ID": 201809
+  },
+  {
+    "course_en": "Advanced Algebra II",
+    "description_en": "undergraduate",
+    "location_en": "Peking University",
+    "date_en": "Spring 2018",
+    "course_zh": "高等代数下",
+    "description_zh": "本",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2018年春季学期",
+    "date_ID": 201803
+  },
+  {
+    "course_en": "Linear Algebra B",
+    "description_en": "undergraduate",
+    "location_en": "Peking University",
+    "date_en": "Fall 2017",
+    "course_zh": "线性代数B",
+    "description_zh": "本",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2017年秋季学期",
+    "date_ID": 201709
+  },
+  {
+    "course_en": "Mathematical Modeling",
+    "description_en": "undergraduate",
+    "location_en": "Peking University",
+    "date_en": "Spring 2017",
+    "course_zh": "数学模型",
+    "description_zh": "本",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2017年春季学期",
+    "date_ID": 201703
+  },
+  {
+    "course_en": "Partial Differential Equations",
+    "description_en": "undergraduate",
+    "location_en": "Peking University",
+    "date_en": "Fall 2016",
+    "course_zh": "偏微分方程",
+    "description_zh": "本",
+    "location_zh": "北京大学",
+    "role": "TA",
+    "date_zh": "2016年秋季学期",
+    "date_ID": 201609
+  }
+]
+

@@ -1,0 +1,10 @@
+Website
+**.out
+**.log
+**__pycache__
+**.pyc
+**.DS_Store
+**.pdf
+**.aux
+**.gz
+

@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%
+% This CV example/template is based on my own
+% CV which I (lamely attempted) to clean up, so that
+% it's less of an eyesore and easier for others to use.
+%
+% LianTze Lim (liantze@gmail.com)
+% 13 May, 2020
+%
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+% Uncomment to enable Chinese; needs XeLaTeX
+\usepackage[fontset=mac]{ctex}
+\usepackage{multicol}
+\usepackage{settings}
+\usepackage{fancyhdr}
+\usepackage{lastpage}%获得总页数
+
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+
+  %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
+  \usepackage[p,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+\continuedname{(续)}
+
+%% Only needed if you want a Publication List
+%\addbibresource{own-bib.bib}
+
+%% Specify your last name and first name (as given in the .bib) to automatically bold your own name in the publications list. One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly for now...
+%\myname{Lim}{Lian\bibnamedelima Tze}
+%\myname{Duan}{Junming}
+
+% Change the page margins if you want
+% \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+%% Photo is only shown if "fullonly" is included
+%\includecomment{fullonly}
+\excludecomment{fullonly}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftheader{%
+
+
+%  \makefield{\faBuilding}{\texttt{School of Mathematical Sciences, Peking University, China}}
+%
+%  \makefield{\faPhone}{\texttt{+86-17610770596}}
+%
+%  \makefield{\faEnvelope[regular]}{\texttt{duanjm@pku.edu.cn}}
+
+\begin{multicols}{2}
+
+  %\texttt{单位：洛桑联邦理工学院\newline\hspace{12pt} 计算数学与模拟科学中心}
+  \texttt{单位：洛桑联邦理工学院}
+
+  \texttt{\hspace{28pt} 计算数学与模拟科学中心}
+
+  \texttt{地址：Station 8, 1015 Lausanne, Switzerland}
+
+  \texttt{籍贯: 湖北武汉}
+
+  \texttt{出生年月: 1991-11}
+
+  \texttt{政治面貌: 中共党员}
+
+  \texttt{电子邮箱: junming.duan@epfl.ch}
+
+%  \texttt{联系电话: +86-17610770596}
+  \texttt{个人主页: \href{https://junmingduan.github.io/}{https://junmingduan.github.io/}}
+
+\end{multicols}
+
+  %\makefield{\faGlobe}{\url{https://junmingduan.github.io/}}
+}
+
+\rightheader{~}
+
+\begin{fullonly}
+\photo[r]{djm1}
+\photoscale{0.13}
+\end{fullonly}
+
+\title{\LARGE\bfseries\sffamily \songti 段俊明的个人简历}
+
+\pagestyle{fancy}            %更改plain状态，首页格式设为fancy
+\fancyhead{}                     %清除以前的命令
+\lhead{}
+\chead{}
+\rhead{}                %页眉右侧内容
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}                 %页脚左侧内容
+
+\renewcommand{\headrulewidth}{0pt}      %把页眉线的宽度设为零，即去掉页眉线
+\renewcommand{\footrulewidth}{0pt}
+%\pagenumberin
+%\pagestyle{empty}                %首页后的章节格式设置为空
+
+\begin{document}
+\maketitle
+\vspace{-22pt}
+\begin{tikzpicture}[baseline]%\
+\shade[left color=SwishLineColour!60!white, right color=white] rectangle (\textwidth,2.5pt);
+\end{tikzpicture}%
+
+\makeheaders[c]
+
+\makerubric{employment}
+\makerubric{education}
+\input{interest}
+
+% If you're not a researcher nor an academic, you probably don't have any publications; delete this line.
+%% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own and use \input NOT \makerubric
+\input{publication}
+
+\makerubric{award}
+\makerubric{conference}
+\makerubric{teaching}
+\makerubric{project}
+\input{service}
+%\makerubric{referee}
+\input{skills}
+
+
+\cfoot{更新于 \number\year 年 \number\month 月 \number\day 日}
+\end{document}

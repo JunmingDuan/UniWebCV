@@ -148,24 +148,9 @@ def conference_entry_web(conference, language="en"):
         conference_html += conference["location"+"_"+language]+", "+conference["date"+"_"+language]+".\n"
     if(conference.get("description"+"_"+language)):
         if(language == "en"):
-            conference_html += "(Talk: <i>"+conference["description"+"_"+language]+"</i>)\n"
+            conference_html += "<i>"+conference["description"+"_"+language]+"</i>\n"
         else:
-            conference_html += "(报告: <i>"+conference["description"+"_"+language]+"</i>)\n"
-    elif(conference.get("poster"+"_"+language) and conference.get("poster_app")):
-        if(language == "en"):
-            conference_html += "(Poster: <i>"+conference["poster"+"_"+language]+"</i> "+conference["poster_app"+"_"+language]+")\n"
-        else:
-            conference_html += "(海报: <i>"+conference["poster"+"_"+language]+"</i> "+conference["poster_app"+"_"+language]+")\n"
-    elif(conference.get("poster"+"_"+language)):
-        if(language == "en"):
-            conference_html += "(Poster: <i>"+conference["poster"+"_"+language]+"</i>)\n"
-        else:
-            conference_html += "(海报: <i>"+conference["poster"+"_"+language]+"</i>)\n"
-    else:
-        if(language == "en"):
-            conference_html += "(Attended)\n"
-        else:
-            conference_html += "(参加)\n"
+            conference_html += "<i>"+conference["description"+"_"+language]+"</i>\n"
     conference_html += "</li>\n"
 
     return conference_html
@@ -179,9 +164,9 @@ def teaching_entry_web(teaching, language="en"):
     '''
     teaching_html = "<li>"
     #course
-    teaching_html += "<b>"+teaching["course"+"_"+language]+"</b>\n"
+    teaching_html += "<b>"+teaching["course"+"_"+language]+"</b>,\n"
     #(description)
-    teaching_html += "("+teaching["description"+"_"+language]+"),\n"
+    # teaching_html += "("+teaching["description"+"_"+language]+"),\n"
     #location
     teaching_html += teaching["location"+"_"+language]+", "
     #date

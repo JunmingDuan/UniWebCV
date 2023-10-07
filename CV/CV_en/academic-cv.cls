@@ -4,6 +4,7 @@
 % This class has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
 % And modified by Jessi Rick <jrick@uwyo.edu>
+% And modified by Junming Duan <duan.junming@icloud.com>
 %
 
 %-------------------------------------------------------------------------------

@@ -63,7 +63,7 @@
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -271,6 +271,10 @@
 % Usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
+% Defines writer's orcid (optional)
+% Usage: \orcid{<url>}
+\newcommand*{\orcid}[1]{\def\@orcid{#1}}
+
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
@@ -396,8 +400,8 @@
       \ifthenelse{\isundefined{\@phone}}%
       {}%
       {%
-        \faPhone\acvHeaderIconSep\@phone%
-        \setbool{isstart}{false}%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \faPhoneSquare\acvHeaderIconSep\@phone%
       }%
       \ifthenelse{\isundefined{\@email}}%
       {}%
@@ -409,7 +413,13 @@
       {}%
       {%
         \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-        \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+        \href{https://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+      }%
+      \ifthenelse{\isundefined{\@orcid}}%
+      {}%
+      {%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
       }%
       \ifthenelse{\isundefined{\@github}}%
       {}%

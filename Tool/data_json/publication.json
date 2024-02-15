@@ -1,5 +1,19 @@
 [
   {
+    "author_en": "J.M. Duan, B. Kovacic, J.S. Hesthaven",
+    "title_en": "Multi-GPU accelerated high-order schemes for hyperbolic conservation laws on adaptive moving meshes",
+    "url": "",
+    "journal_en": "",
+    "volume": "",
+    "issue": "",
+    "page": "",
+    "year": "2024",
+    "arXiv": "",
+    "status": "preparation",
+    "correspondence": "false",
+    "date_ID": 20240215
+  },
+  {
     "author_en": "Z.H. Zhang, H.Z. Tang, J.M. Duan",
     "title_en": "High-order accurate well-balanced energy stable finite difference schemes for multi-layer shallow water equations on fixed and adaptive moving meshes",
     "url": "",
@@ -21,11 +35,11 @@
     "volume": "",
     "issue": "",
     "page": "",
-    "year": "2023",
+    "year": "2024",
     "arXiv": "2305.09199",
-    "status": "submitted",
+    "status": "accepted",
     "correspondence": "false",
-    "date_ID": 20230516
+    "date_ID": 20240206
   },
   {
     "author_en": "J.M. Duan, J.S. Hesthaven",

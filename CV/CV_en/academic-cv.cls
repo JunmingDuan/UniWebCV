@@ -583,7 +583,7 @@
 % Define a line of cv entry
 % Usage: \cventry{<date>}{<title>}{<location>}{<description>}
 \newcommand*{\cventry}[4]{%
-  \entrytitlestyle{#2}, \entrylocationstyle{#3} \entrydescriptionstyle{#4} & \entrydatestyle{#1}\\
+  \entrytitlestyle{#2} | \entrylocationstyle{#3} \ifthenelse{\equal{#4}{}}{}{ | \entrydescriptionstyle{#4}} & \entrydatestyle{#1}\\
 }
 
 % Define a line of cv position entry
@@ -613,19 +613,27 @@
 % Define a line of cv honor entry
 % Usage: \cvhonorentry{<date>}{<title>}{<location>}
 \newcommand*{\cvhonorentry}[3]{%
-  \entrytitlestyle{#2}, \entrylocationstyle{#3} & \entrydatestyle{#1} \\
+  \entrytitlestyle{#2} | \entrylocationstyle{#3} & \entrydatestyle{#1} \\
 }
 
 % Define a line of cv supervision entry
 % Usage: \cvsupentry{<date>}{<title>}{<location>}
 \newcommand*{\cvsupentry}[3]{%
-  \entrytitlestyle{#2}. \entrylocationstyle{#3} & \entrydatestyle{#1} \\
+  \entrytitlestyle{#2} | \entrylocationstyle{#3} & \entrydatestyle{#1} \\
+}
+
+% Define a line of cv conference entry
+% Usage: \cvprojectentry{<date>}{<title>}{<detail>}{<organization>}{<description>}
+\newcommand*{\cvconferenceentry}[4]{%
+  \entrytitlestyle{#2} | \entrylocationstyle{#3}
+  \ifthenelse{\equal{#4}{}}{}{\newline \entrydescriptionstyle{#4}} & \entrydatestyle{#1} \\
 }
 
 % Define a line of cv project entry
 % Usage: \cvprojectentry{<date>}{<title>}{<detail>}{<organization>}{<description>}
 \newcommand*{\cvprojectentry}[5]{%
-  \entrytitlestyle{#2}: \entrylocationstyle{#3} \newline \entrydescriptionstyle{Supported by #4.} \entrydescriptionstyle{#5} & \entrydatestyle{#1} \\
+  \entrytitlestyle{#2}: \entrylocationstyle{#3} \newline
+  \entrydescriptionstyle{Supported by #4 |} \entrydescriptionstyle{#5} & \entrydatestyle{#1} \\
 }
 
 % Define a line of cv reference entry
@@ -694,7 +702,7 @@
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+  \honordatestyle{#4} & \honorpositionstyle{#1} | \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
 % Define an environment for cvskill

@@ -99,12 +99,12 @@ def position_entry_web(position, language="en"):
     '''
     position_html = "<li>"
     #period
-    position_html += position["period"+"_"+language]+", "
+    position_html += position["period"+"_"+language]+" | "
     #position
-    position_html += position["position"+"_"+language]+", "
+    position_html += position["position"+"_"+language]+" | "
     #location
-    position_html += position["location"+"_"+language]+". "
-    position_html += "("+position["description"+"_html"]+")</li>\n"
+    position_html += position["location"+"_"+language]+" | "
+    position_html += position["description"+"_html"]+"</li>\n"
 
     return position_html
 
@@ -116,11 +116,11 @@ def award_entry_web(award, language="en"):
     '''
     award_html = "<li>"
     #title
-    award_html += "<b>"+award["title"+"_"+language]+"</b>, "
+    award_html += "<b>"+award["title"+"_"+language]+"</b> | "
     #organization
-    award_html += award["organization"+"_"+language]+", "
+    award_html += award["organization"+"_"+language]+" | "
     #date
-    award_html += award["date"+"_"+language]+".\n"
+    award_html += award["date"+"_"+language]+"\n"
     award_html += "</li>\n"
 
     return award_html
@@ -137,20 +137,20 @@ def conference_entry_web(conference, language="en"):
     conference_html = "<li>"
     #title
     if conference["title"+"_"+language] != "":
-        conference_html += "<b>"+conference["title"+"_"+language]+"</b>,\n"
+        conference_html += "<b>"+conference["title"+"_"+language]+"</b> |\n"
     #[location] [online], PERIOD.
     if(conference.get("online") == 1):
         if(language == "en"):
-            conference_html += "online, "+conference["date"+"_"+language]+".\n"
+            conference_html += "online, "+conference["date"+"_"+language]+"\n"
         else:
-            conference_html += "线上, "+conference["date"+"_"+language]+".\n"
+            conference_html += "线上, "+conference["date"+"_"+language]+"\n"
     else:
-        conference_html += conference["location"+"_"+language]+", "+conference["date"+"_"+language]+".\n"
+        conference_html += conference["location"+"_"+language]+" | "+conference["date"+"_"+language]+"\n"
     if(conference.get("description"+"_"+language)):
         if(language == "en"):
-            conference_html += "<i>"+conference["description"+"_"+language]+"</i>\n"
+            conference_html += " | "+conference["description"+"_"+language]+"\n"
         else:
-            conference_html += "<i>"+conference["description"+"_"+language]+"</i>\n"
+            conference_html += " | "+conference["description"+"_"+language]+"\n"
     conference_html += "</li>\n"
 
     return conference_html
@@ -164,13 +164,13 @@ def teaching_entry_web(teaching, language="en"):
     '''
     teaching_html = "<li>"
     #course
-    teaching_html += "<b>"+teaching["course"+"_"+language]+"</b>,\n"
+    teaching_html += "<b>"+teaching["course"+"_"+language]+"</b> |\n"
     #(description)
     # teaching_html += "("+teaching["description"+"_"+language]+"),\n"
     #location
-    teaching_html += teaching["location"+"_"+language]+", "
+    teaching_html += teaching["location"+"_"+language]+" | "
     #date
-    teaching_html += teaching["date"+"_"+language]+".\n"
+    teaching_html += teaching["date"+"_"+language]+"\n"
     # if teaching["role"] == "TA":
         # teaching_html += " Teaching Assistant.\n"
     # elif teaching["role"] == "Instructor":

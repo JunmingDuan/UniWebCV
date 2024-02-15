@@ -37,7 +37,7 @@ if __name__ == "__main__":
     html_file.write(read_block_html("personal", data_html_dir))
 
     block_name  = ["position", "publication", "award", "conference", "teaching"]
-    block_title_en = ("Academic Positions", "Research Publications", "Awards & Honors", \
+    block_title_en = ("Academic Positions", "Research Publications", "Major Awards & Honors", \
             "Conferences & Talks", "Teaching Assistant")
     # block_title_zh = ("学术经历", "研究成果", "奖励荣誉", "学术会议与报告", "助教", "其它服务")
     block_list = []

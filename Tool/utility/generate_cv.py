@@ -121,7 +121,7 @@ def conference_entry_CV(conference, language="en"):
     '''Generate an entry for a conference in CV like:
        \cventry{date}{conference}{location}{description}
     '''
-    conference_latex = "\cventry"
+    conference_latex = "\cvconferenceentry"
     conference_latex += "{"+conference["date"+"_"+language]+"}"
     conference_latex += "{"+conference["title"+"_"+language]+"}"
     conference_latex += "{"+conference["location"+"_"+language]+"} "

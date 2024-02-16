@@ -533,23 +533,31 @@
 % \global\let\oldpagebreak\old@nopagebreak
 }
 
-\newcounter{pubenum}
-\newcommand*{\pubenum}{\thepubenum.\stepcounter{pubenum}}
+\RequirePackage[leftmargin=18pt]{etaremune}
+
+%\newcommand\reverselabel[1]{%
+  %\def\theenumi{ww}%
+  %\renewcommand\makelabel{\makebox[\dimexpr\labelwidth-3pt\relax][r]{%
+    %\the\numexpr#1-\value{enumi}+1\relax}}}%
+
+%\newcounter{pubenum}
+%\newcommand*{\pubenum}{\thepubenum.\stepcounter{pubenum}}
 
 \newcommand{\makepublication}[1]{%
   \sectionstyle{Research Publications} {\color{gray}\vhrulefill{0.9pt}} \\ 
-  \setcounter{pubenum}{1}
   \input{#1}
 }
 
-\newenvironment{cvpublicationsection}[1]{%
+\newenvironment{cvpublicationsection}[2]{%
   \subsectionstyle{#1} \\
   \setlength{\parskip}{0pt}
   \vspace{-5mm}
-  \begin{enumerate}%
+  %\begin{enumerate}%
+  \begin{etaremune}[start=#2]%
       \raggedright
     }{%
-  \end{enumerate}%
+  %\end{enumerate}%
+  \end{etaremune}%
   %\vspace{-2mm}
 }
 
@@ -623,7 +631,7 @@
 }
 
 % Define a line of cv conference entry
-% Usage: \cvprojectentry{<date>}{<title>}{<detail>}{<organization>}{<description>}
+% Usage: \cvconferenceentry{<date>}{<title>}{<detail>}{<organization>}{<description>}
 \newcommand*{\cvconferenceentry}[4]{%
   \entrytitlestyle{#2} | \entrylocationstyle{#3}
   \ifthenelse{\equal{#4}{}}{}{\newline \entrydescriptionstyle{#4}} & \entrydatestyle{#1} \\
@@ -633,7 +641,7 @@
 % Usage: \cvprojectentry{<date>}{<title>}{<detail>}{<organization>}{<description>}
 \newcommand*{\cvprojectentry}[5]{%
   \entrytitlestyle{#2}: \entrylocationstyle{#3} \newline
-  \entrydescriptionstyle{Supported by #4 |} \entrydescriptionstyle{#5} & \entrydatestyle{#1} \\
+  \entrylocationstyle{#4} \entrydescriptionstyle{ | Supported by #5} & \entrydatestyle{#1} \\
 }
 
 % Define a line of cv reference entry

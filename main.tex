@@ -1,0 +1,21 @@
+\documentclass{article}
+\newcommand\reverselabel[1]{%
+  \def\theenumi{}%
+  \renewcommand\makelabel{\makebox[\dimexpr\labelwidth-3pt\relax][r]{%
+    \the\numexpr#1-\value{enumi}+1\relax}}}%
+\begin{document}
+\begin{enumerate}
+\reverselabel{10}%
+\item nima
+\item text
+\item still descending??
+\end{enumerate}
+Leaving list.
+\begin{enumerate}
+\reverselabel{3}%
+\item New start label 
+\item text
+\item still descending??
+\end{enumerate}
+\end{document}
+

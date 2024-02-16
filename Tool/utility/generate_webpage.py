@@ -51,7 +51,7 @@ def publication_entry_web(article, language="en"):
         article_html += "<i><b>"+article["journal"+"_"+language]+"</b></i>, "
         #volume(issue), page, year
         article_html += article["volume"]
-        if(article.get("issue") is not ""):
+        if(article.get("issue") != ""):
             article_html += "("+article["issue"]+"): "
         else:
             article_html += ": "
@@ -210,10 +210,6 @@ def generage_block_html(block, title, is_light, block_list, language="en"):
     block_html += '<h2 id="'+block+'">'+title+'</h2>\n'
 
     if(block == "publication"):
-        block_html += '''
-            <h4>Journal Articles</h4>
-            <ol class="split start">
-        '''
         article_list = []
         preprint_list = []
         for i in range(len(block_list)):
@@ -222,18 +218,24 @@ def generage_block_html(block, title, is_light, block_list, language="en"):
             else:
                 preprint_list.append(block_list[i])
 
-        for i in range(len(article_list)):
-            block_html += switch_entry[block](article_list[i], language)
+        preprint_list = sorted(preprint_list, key=lambda x: x["date_ID"], reverse=True)
+        article_list = sorted(article_list, key=lambda x: x["date_ID"], reverse=True)
 
         if len(preprint_list) > 0:
-            block_html += '''\
-                    </ol>
-
-                <h4>Preprints</h4>
-                <ol class="split">
-            '''
+            block_html += '<h4>Preprints</h4>\n'
+            block_html += '<ol reversed start="'+str(len(block_list))+'">'
             for i in range(len(preprint_list)):
                 block_html += switch_entry[block](preprint_list[i], language)
+
+        block_html += '''\
+                    </ol>
+
+            <h4>Journal Articles</h4>
+        '''
+        block_html += '<ol reversed start="'+str(article_list)+'">'
+
+        for i in range(len(article_list)):
+            block_html += switch_entry[block](article_list[i], language)
 
     else:
         block_html += "<ul>\n"

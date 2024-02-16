@@ -66,17 +66,6 @@
     "date_ID": 20230607
   },
   {
-    "title_en": "MATHICSE Retreat",
-    "location_en": "Bienne, Switzerland",
-    "description_en": "Talk: Machine learning enhanced aerodynamic forces prediction based on sparse pressure sensor inputs",
-    "date_en": "June 05-06, 2023",
-    "title_zh": "计算科学与工程系研讨会",
-    "location_zh": "瑞士洛桑联邦理工学院",
-    "description_zh": "基于稀疏压力传感器输入的机器学习增强的气动力预测",
-    "date_zh": "2023, 6.05-6.06",
-    "date_ID": 20230605
-  },
-  {
     "title_en": "Oberseminar",
     "location_en": " host by Prof. Christian Klingenberg, online",
     "description_en": "Talk: Data-driven reduced-order modeling for time-dependent parametrized problems",
@@ -97,17 +86,6 @@
     "description_zh": "高精度熵稳定的自适应移动网格方法",
     "date_zh": "2022, 8.22-8.26",
     "date_ID": 20220822
-  },
-  {
-    "title_en": "MATHICSE Retreat",
-    "location_en": "Villars-sur-Ollon, Switzerland",
-    "description_en": "Talk: High-order accurate entropy stable adaptive moving mesh methods",
-    "date_en": "June 27-29, 2022",
-    "title_zh": "计算科学与工程系研讨会",
-    "location_zh": "瑞士洛桑联邦理工学院",
-    "description_zh": "高精度熵稳定的自适应移动网格方法",
-    "date_zh": "2022, 6.27-6.29",
-    "date_ID": 20220627
   },
   {
     "title_en": "Symposium on High-Fidelity Numerical Simulation of Fluid Problems",

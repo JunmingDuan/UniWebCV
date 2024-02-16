@@ -31,18 +31,18 @@ def author_CV(author, language="en", correspondence=False):
 
 def publication_entry_CV(article, language="en"):
     '''Generate an entry for a journal article in CV like:
-       \item[\pubenum] AUTHOR, TITLE, {\em\bfseries JOURNAL}, VOLUME(ISSUE): PAGE, YEAR.
+       \item AUTHOR, TITLE, {\em\bfseries JOURNAL}, VOLUME(ISSUE): PAGE, YEAR.
        [<a href="arXiv link" target="_blank">arXiv</a>]
        [<a href="journal link" target="_blank">journal</a>]
        [(in Chinese)]
     '''
     if(article.get("chinese") == 1 and language == "zh"):
-        article_latex = "%\n\item[\pubenum] "+author_CV(article["author_zh"], language)+" "
+        article_latex = "%\n"+r"\item "+author_CV(article["author_zh"], language)+" "
     else:
         if article.get("correspondence") == "true":
-            article_latex = "%\n\item[\pubenum] "+author_CV(article["author_en"], "en", True)+" "
+            article_latex = "%\n"+r"\item "+author_CV(article["author_en"], "en", True)+" "
         else:
-            article_latex = "%\n\item[\pubenum] "+author_CV(article["author_en"], "en", False)+" "
+            article_latex = "%\n"+r"\item "+author_CV(article["author_en"], "en", False)+" "
     if("url" in article and article["url"] != ""):
         if(article.get("chinese") == 1 and language == "zh"):
             article_latex += '\href{'+article["url"]+'}{'+article["title_zh"]+"}, "
@@ -165,20 +165,18 @@ def generage_block_latex(block, title, is_light, block_list, language="en"):
     if(block == "publication"):
         article_list = []
         preprint_list = []
-        block_latex += r"\begin{cvpublicationsection}{Journal Articles}"+"\n"
         for i in range(len(block_list)):
             if(block_list[i].get("status") == "published" or block_list[i].get("status") == "accepted"):
                 article_list.append(block_list[i])
             else:
                 preprint_list.append(block_list[i])
 
-        for i in range(len(article_list)):
-            block_latex += switch_entry[block](article_list[i], language)
-        block_latex += "\end{cvpublicationsection}\n\n"
+        preprint_list = sorted(preprint_list, key=lambda x: x["date_ID"], reverse=True)
+        article_list = sorted(article_list, key=lambda x: x["date_ID"], reverse=True)
 
         if len(preprint_list) > 0:
             if(language == "en"):
-                block_latex += r"\begin{cvpublicationsection}{Preprints}"+"\n"
+                block_latex += r"\begin{cvpublicationsection}{Preprints}{"+str(len(block_list))+"}"+"\n"
             else:
                 block_latex += "\end{enumerate}\n\n"\
                                +"\makesubrubrichead{\songti 预印本}\n"\
@@ -187,6 +185,12 @@ def generage_block_latex(block, title, is_light, block_list, language="en"):
             for i in range(len(preprint_list)):
                 block_latex += switch_entry[block](preprint_list[i], language)
             block_latex += "\end{cvpublicationsection}\n"
+
+
+        block_latex += r"\begin{cvpublicationsection}{Journal Articles}{"+str(len(article_list))+"}"+"\n"
+        for i in range(len(article_list)):
+            block_latex += switch_entry[block](article_list[i], language)
+        block_latex += "\end{cvpublicationsection}\n\n"
 
 
     elif block == "position":

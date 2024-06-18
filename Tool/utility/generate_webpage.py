@@ -26,7 +26,7 @@ def author_web(author, language="en", correspondence=False):
 
     return author_formatted
 
-def publication_entry_web(article, language="en"):
+def publication_entry_web(article, index, language="en"):
     '''Generate an entry for a journal article in webpage like:
        <li>
        <b>J.M. Duan</b> and H.Z. Tang,
@@ -65,10 +65,16 @@ def publication_entry_web(article, language="en"):
         article_html += ", "+article["year"]+".\n"
     elif(article.get("status") == "submitted"):
         if article.get("arXiv" != ""):
-            article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>, "
+            if article.get("journal"+"_"+language) != "":
+                article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>, "
+            else:
+                article_html += ' submitted, '
             article_html += ' arXiv:'+article.get("arXiv")
         else:
-            article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>"
+            if article.get("journal"+"_"+language) != "":
+                article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>"
+            else:
+                article_html += ' submitted'
         article_html += ", "+article["year"]+".\n"
     elif(article.get("status") == "preparation"):
         article_html += ' <i><b>in preparation</b></i>.'
@@ -76,22 +82,26 @@ def publication_entry_web(article, language="en"):
     #Chinese
     if(article.get("chinese") == 1):
         if(language == "en"):
-            article_html += " (in Chinese)\n"
+            article_html += " (in Chinese)"
     else:
-        article_html += "\n"
+        article_html += ""
     #arXiv
     if(article.get("arXiv")):
-        article_html += ' [<a href="https://arxiv.org/abs/'+article.get("arXiv")+'" target="_blank">'
+        article_html += '[<a href="https://arxiv.org/abs/'+article.get("arXiv")+'" target="_blank">'
         article_html += "arXiv</a>]"
     #journal link
     if(article.get("url")):
-        article_html += '[<a href="'+article.get("url")+'" target="_blank">journal</a>]\n'
+        article_html += '[<a href="'+article.get("url")+'" target="_blank">journal</a>]'
+    #abstract
+    if(article.get("abstract"+"_"+language)):
+        article_html += r"""<button
+        class="unstyled-button"onclick="switchAbstract('abstract"""+str(index)+"""', '"""+article.get("abstract"+"_"+language)+"""')">[<a class=".text-primary">abstract</a>] </button> <div id='abstract"""+str(index)+"""'></div>"""
 
-    article_html += "</li>\n"
+    article_html += "</li>\n\n"
 
     return article_html
 
-def position_entry_web(position, language="en"):
+def position_entry_web(position, index, language="en"):
     '''Generate an entry for an position in webpage like:
         <li>
         <b>POSITION</b>, location, PERIOD.
@@ -108,7 +118,7 @@ def position_entry_web(position, language="en"):
 
     return position_html
 
-def award_entry_web(award, language="en"):
+def award_entry_web(award, index, language="en"):
     '''Generate an entry for an award in webpage like:
         <li>
         <b>TITLE</b>, ORGANIZATION, [MONTH] YEAR.
@@ -125,7 +135,7 @@ def award_entry_web(award, language="en"):
 
     return award_html
 
-def conference_entry_web(conference, language="en"):
+def conference_entry_web(conference, index, language="en"):
     '''Generate an entry for a conference in webpage like:
       <li>
         <b>TITLE</b>,
@@ -155,7 +165,7 @@ def conference_entry_web(conference, language="en"):
 
     return conference_html
 
-def teaching_entry_web(teaching, language="en"):
+def teaching_entry_web(teaching, index, language="en"):
     '''Generate an entry for a teaching in webpage like:
         <li>
         <b>COURSE</b>
@@ -179,7 +189,7 @@ def teaching_entry_web(teaching, language="en"):
 
     return teaching_html
 
-def service_entry_web(service, language="en"):
+def service_entry_web(service, index, language="en"):
     '''Generate an entry for a service in webpage like:
         <li>
         JOURNAL
@@ -225,17 +235,69 @@ def generage_block_html(block, title, is_light, block_list, language="en"):
             block_html += '<h4>Preprints</h4>\n'
             block_html += '<ol reversed start="'+str(len(block_list))+'">'
             for i in range(len(preprint_list)):
-                block_html += switch_entry[block](preprint_list[i], language)
+                block_html += switch_entry[block](preprint_list[i], i, language)
 
         block_html += '''\
                     </ol>
 
             <h4>Journal Articles</h4>
         '''
-        block_html += '<ol reversed start="'+str(article_list)+'">'
+        block_html += '<ol reversed start="'+str(len(article_list))+'">\n'
 
         for i in range(len(article_list)):
-            block_html += switch_entry[block](article_list[i], language)
+            block_html += switch_entry[block](article_list[i], len(preprint_list)+i, language)
+
+    else:
+        block_html += "<ul>\n"
+        for i in range(len(block_list)):
+            block_html += switch_entry[block](block_list[i], language)
+        block_html += "</ul>\n"
+
+    block_html += '''
+        </div>
+    </div>
+    '''
+    block_html += "<!-- end of "+block+" -->\n"
+
+    return block_html
+
+def generate_page(block, title, is_light, block_list, language="en"):
+    print("> Generate "+block+" list in webpage"+"_"+language+".")
+    block_html = "<!-- start of "+block+" -->\n"
+    if(is_light):
+        block_html += '<div class="bg-light p-3">\n'
+    else:
+        block_html += '<div class="p-3">\n'
+    block_html += '<div class="content-md container-fluid">\n'
+    block_html += '<h2 id="'+block+'">'+title+'</h2>\n'
+
+    if(block == "publication"):
+        article_list = []
+        preprint_list = []
+        for i in range(len(block_list)):
+            if(block_list[i].get("status") == "published" or block_list[i].get("status") == "accepted"):
+                article_list.append(block_list[i])
+            else:
+                preprint_list.append(block_list[i])
+
+        preprint_list = sorted(preprint_list, key=lambda x: x["date_ID"], reverse=True)
+        article_list = sorted(article_list, key=lambda x: x["date_ID"], reverse=True)
+
+        if len(preprint_list) > 0:
+            block_html += '<h4>Preprints</h4>\n'
+            block_html += '<ol reversed start="'+str(len(block_list))+'">'
+            for i in range(len(preprint_list)):
+                block_html += switch_entry[block](preprint_list[i], i, language)
+
+        block_html += '''\
+                    </ol>
+
+            <h4>Journal Articles</h4>
+        '''
+        block_html += '<ol reversed start="'+str(len(article_list))+'">\n'
+
+        for i in range(len(article_list)):
+            block_html += switch_entry[block](article_list[i], len(preprint_list)+i, language)
 
     else:
         block_html += "<ul>\n"

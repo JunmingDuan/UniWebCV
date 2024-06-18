@@ -1,13 +1,14 @@
+import os
 import time
 import sys
 sys.path.append("utility")
 
 from read_data import read_block_json
 from read_data import read_block_html
-from generate_webpage import generage_block_html
+from generate_webpage import generage_block_html, generate_page
 from generate_cv import generage_block_latex
 
-output_html   = "../Website/index.html"
+output_html_dir = "../Website"
 output_latex  = "../CV/"
 data_json_dir = "data_json/"
 data_html_dir = "data_html/"
@@ -15,26 +16,6 @@ data_html_dir = "data_html/"
 if __name__ == "__main__":
     print("\n> Start process.\n")
     start_time = time.perf_counter()
-    html_file = open(output_html, 'w')
-
-    html_file.write('''\
-    <!DOCTYPE html>
-    <!--
-    ''')
-    print("> Read in readme from readme.md.")
-    readme_file = open('../readme.md', 'r')
-    html_file.write(readme_file.read())
-    readme_file.close()
-    html_file.write('''\
-    -->
-
-    <html lang="en">
-    ''')
-
-    html_file.write(read_block_html("head", data_html_dir))
-    html_file.write("<body>\n")
-    html_file.write(read_block_html("navigation", data_html_dir))
-    html_file.write(read_block_html("personal", data_html_dir))
 
     block_name  = ["position", "publication", "award", "conference", "teaching"]
     block_title_en = ("Academic Positions", "Research Publications", "Major Awards & Honors", \
@@ -46,8 +27,6 @@ if __name__ == "__main__":
 
     for i in range(len(block_name)):
         #html block
-        html_file.write(
-        generage_block_html(block_name[i], block_title_en[i], (i+1)%2, block_list[i], "en"))
         #latex block
         block_latex_file_en = open(output_latex+"CV_en/"+block_name[i]+".tex", 'w')
         # block_latex_file_zh = open(output_latex+"CV_zh/"+block_name[i]+".tex", 'w')
@@ -58,20 +37,18 @@ if __name__ == "__main__":
         block_latex_file_en.close()
         # block_latex_file_zh.close()
 
-    html_file.write(read_block_html("supervision", data_html_dir))
-    html_file.write(read_block_html("service", data_html_dir))
-    html_file.write(read_block_html("skill", data_html_dir))
-    html_file.write(read_block_html("ClustrMaps", data_html_dir))
-
-    html_file.write('''\
-
-        </body>
-
-    </html>\n''')
-
-    print("\n> Output html to", output_html)
-
-    html_file.close()
+    # page_names  = ["publication", "conference", "teaching"]
+    # page_titles  = ["Publications", "Conference & Talks", "Teaching"]
+    page_names  = ["publication", "conference"]
+    page_titles  = ["Publications", "Conferences & Talks"]
+    for i in range(len(page_names)):
+        page_name = page_names[i]
+        insert_text = generate_page(page_name, page_titles[i], 0,
+                                    read_block_json(page_name, data_json_dir), "en")
+        with open(os.path.join(data_html_dir, page_name+"_template.html"), "r") as temp:
+            text = temp.read().replace('insert', insert_text)
+        with open(os.path.join(output_html_dir, page_name+".html"), "w") as page_file:
+            page_file.write(text)
 
     print("\n> Processing succeeded!")
     end_time = time.perf_counter()

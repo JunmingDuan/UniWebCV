@@ -72,9 +72,15 @@ def publication_entry_CV(article, language="en"):
             article_latex += r'accepted by \pubjournalstyle{'+article["journal_en"]+'}, '+article["year"]+"."
     elif(article.get("status") == "submitted"):
         if(article.get("chinese") == 1 and language == "zh"):
-            article_latex += 'submitted to \pubjournalstyle{'+article["journal_zh"]+'}, '+article["year"]+"."
+            if(article.get("journal_zh") != ""):
+                article_latex += 'submitted to \pubjournalstyle{'+article["journal_zh"]+'}, '+article["year"]+"."
+            else:
+                article_latex += 'submitted, '+article["year"]+"."
         else:
-            article_latex += 'submitted to \pubjournalstyle{'+article["journal_en"]+'}, '+article["year"]+"."
+            if(article.get("journal_en") != ""):
+                article_latex += 'submitted to \pubjournalstyle{'+article["journal_en"]+'}, '+article["year"]+"."
+            else:
+                article_latex += 'submitted, '+article["year"]+"."
     elif(article.get("status") == "preparation"):
         if(article.get("chinese") == 1 and language == "zh"):
             article_latex += r'{\em\bfseries 准备中}.'

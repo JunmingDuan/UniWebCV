@@ -275,6 +275,10 @@
 % Usage: \orcid{<url>}
 \newcommand*{\orcid}[1]{\def\@orcid{#1}}
 
+% Defines writer's scholar (optional)
+% Usage: \scholar{<url>}
+\newcommand*{\scholar}[1]{\def\@scholar{#1}}
+
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
@@ -420,6 +424,12 @@
       {%
         \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
         \href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
+      }%
+      \ifthenelse{\isundefined{\@scholar}}%
+      {}%
+      {%
+        \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+        \href{https://\@scholar}{\faHome\acvHeaderIconSep scholar}%
       }%
       \ifthenelse{\isundefined{\@github}}%
       {}%
@@ -649,7 +659,9 @@
 \newcommand*{\cvrefentry}[5]{%
   \begin{minipage}[c]{0.48\textwidth}
     \vspace{1mm}
-    \referencenamestyle{#1}\newline \referencelocationstyle{#2} \newline \referencelocationstyle{#3} \newline \referencelocationstyle{#4} \newline \href{mailto:\@email}{{\fontsize{8pt}{1em}{\faEnvelope}}\acvHeaderIconSep \referenceemailstyle{#5}}
+    \referencenamestyle{#1}\newline \referencelocationstyle{#2} \newline
+    \referencelocationstyle{#3} \newline \referencelocationstyle{#4} \newline
+    \href{mailto:#5}{{\fontsize{8pt}{1em}{\faEnvelope}}\acvHeaderIconSep \referenceemailstyle{#5}}
   \end{minipage}
 }
 

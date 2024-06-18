@@ -1,51 +1,53 @@
-    <!DOCTYPE html>
-    <!--
-    A unified website and cv generator
+<!DOCTYPE html>
+<!--
+  A unified website and cv generator
 
-https://junmingduan.github.io/
+  https://junmingduan.github.io/
 
-Author: Junming Duan, duan.junming@icloud.com
+  Author: Junming Duan, duan.junming@icloud.com
 
-Date: Oct 07, 2023
+  Date: Oct 07, 2023
 
-Note: You can redistribute it and/or modify it under the terms of the GNU General Public License
-      as published by the Free Software Foundation.
-      It is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
+  Note: You can redistribute it and/or modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation.
+  It is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
 
-    -->
+-->
 
-    <html lang="en">
-    <!-- start of head -->
-<head>
-  <!-- Google tag (gtag.js) -->
-  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JRY3MQ3P2"></script>-->
-  <!--<script>-->
-    <!--window.dataLayer = window.dataLayer || [];-->
-    <!--function gtag(){dataLayer.push(arguments);}-->
-    <!--gtag('js', new Date());-->
+<html lang="en">
+  <!-- start of head -->
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JRY3MQ3P2"></script>-->
+    <!--<script>-->
+      <!--window.dataLayer = window.dataLayer || [];-->
+        <!--function gtag(){dataLayer.push(arguments);}-->
+        <!--gtag('js', new Date());-->
 
-    <!--gtag('config', 'G-5JRY3MQ3P2');-->
-  <!--</script>-->
+        <!--gtag('config', 'G-5JRY3MQ3P2');-->
+        <!--</script>-->
 
-  <title>Junming DUAN (段俊明)</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Junming DUAN (段俊明)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="aux_scripts.js"></script>
 
-  <!-- Continued the ordered list -->
-  <style type="text/css">
+    <!-- Continued the ordered list -->
+    <style type="text/css">
     ol.split { list-style-type: none; }
     ol.split li:before
-    {
+      {
       counter-increment: mycounter;
       content: counter(mycounter) ".\00A0\00A0";
     }
     ol.split li
-    {
+      {
       text-indent: -1.3em;
     }
     ol.start { counter-reset: mycounter; }
@@ -64,419 +66,177 @@ Note: You can redistribute it and/or modify it under the terms of the GNU Genera
       padding-left: 1rem;
       padding-right: 1rem;
     }
-  </style>
-</head>
+    .unstyled-button {
+      border: none;
+      padding: 0;
+      background: none;
+    }
+    </style>
+  </head>
 
-<!-- end of head -->
-<body>
-<!-- start of navigation -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Junming DUAN's homepage</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#publication">Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#award" >Awards & Honors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#conference" >Conferences & Talks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#teaching" >Teaching</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="files/CV.pdf" >CV</a>
-        </li>
-      </ul>
-      <!--<form class="d-flex">-->
-        <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-        <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
-      <!--</form>-->
+  <script>
+    function switchAbstract(abstractid, abstract) {
+      var x = document.getElementById(abstractid);
+      if (x.innerHTML === "") {
+        x.innerHTML = abstract;
+      } else {
+        x.innerHTML = "";
+      }
+    }
+  </script>
+  <!-- end of head -->
+
+  <body>
+    <!--Navigation bar-->
+    <div class="container-fluid" id="navplaceholder">
     </div>
-  </div>
-</nav>
+    <!--end of Navigation bar-->
 
-<!-- end of navigation -->
-<!-- start of personal -->
-<div class="container-fluid">
-  <div class="p-3 row">
-    <!-- Contact Info on the Sidebar -->
-    <div class="col-lg-4 col-xl-4">
-      <p>
-      <!--<img class="img-fluid" src="photo/Le Petit Prince.jpeg" width="400rem" alt="">-->
-      <img class="img-fluid" src="photo/Bielersee.jpeg" alt="">
-      </p>
-      <address>
-      <strong>Mailing address:</strong><br>
-      Room 03.017, Emil-Fischer-Straße 40, 97074 Würzburg, Germany<br>
-      Julius-Maximilians-Universität Würzburg<br>
-      <strong>Email:</strong> junming.duan@uni-wuerzburg.de<br>
-      </address>
-      <p>
-      <!-- Links on the Sidebar -->
-      <a href="https://scholar.google.com/citations?hl=en&user=Gk3u0MMAAAAJ" target="_blank"><img src="icons/google-scholar.svg" width="24" height="24"></a> &nbsp;
-      <a href="https://www.researchgate.net/profile/Junming-Duan?ev=hdr_xprf" target="_blank"><img src="icons/research-gate.svg" width="24" height="24"></a> &nbsp;
-      <a href="https://github.com/JunmingDuan" target="_blank"><img src="icons/github.svg" width="24" height="24"></a> &nbsp;
-      <a href="mailto:duanjm@pku.edu.cn" target="_blank"><img src="icons/mail.svg" width="26" height="26"></a> &nbsp;
-      </p>
+    <!-- start of personal -->
+    <div class="container-fluid">
+      <div class="p-3 row">
+        <!-- Contact Info on the Sidebar -->
+        <div class="col-lg-3 col-xl-3">
+          <p>
+          <!--<img class="img-fluid" src="photo/Le Petit Prince.jpeg" width="400rem" alt="">-->
+          <img class="img-fluid" src="photo/Bielersee.jpeg" alt="">
+          </p>
+        </div>
+
+        <!-- Entries Column -->
+        <div class="col-lg-9 col-xl-9">
+
+          <div style="margin-top:0%; text-align:justify;">
+            <p>Welcome to the webpage of Dr. Junming Duan (段俊明). He is currently a Humboldt Research Fellow at
+            <a href="https://www.mathematik.uni-wuerzburg.de/en/" style="color: black" target="_blank">the Institute of Mathematics</a>,
+            <a href="https://www.uni-wuerzburg.de/en/home/" style="color:black" target="_blank">University of Würzburg</a>,
+            working with
+            <a href="https://ifm.mathematik.uni-wuerzburg.de/~klingen/Welcome.html" style="color:black" target="_blank">Prof. Dr. Christian Klingenberg</a>.
+            Until September 2023, he was a postdoctoral researcher at
+            <a href="https://www.epfl.ch/labs/mcss/" style="color:black" target="_blank">MCSS</a>,
+            <a href="https://www.epfl.ch/en/" style="color:black" target="_blank">EPFL</a>,
+            working with
+            <a href="https://people.epfl.ch/jan.hesthaven?lang=en" style="color:black" target="_blank">Prof. Jan S. Hesthaven</a>.
+            He received his B.Sc. (2016) and Ph.D. (2021) at
+            <a href="https://www.pku.edu.cn/" style="color:black" target="_blank">Peking University</a>,
+            in <a href="https://www.math.pku.edu.cn/" style="color:black" target="_blank">the School of Mathematical Sciences</a>,
+            supervised by <a href="https://www.math.pku.edu.cn/teachers/tanghz/private/homepage/" style="color:black" target="_blank">Prof. Huazhong Tang</a>.
+            His research primarily involves high-order accurate numerical methods
+            and reduced-order modeling.
+            </p>
+
+          <address>
+            <strong>Mailing address:</strong><br>
+            Room 03.017, Emil-Fischer-Straße 40, 97074 Würzburg, Germany<br>
+            Julius-Maximilians-Universität Würzburg<br>
+            <strong>Email:</strong> junming.duan@uni-wuerzburg.de<br>
+          </address>
+          <p>
+          <!-- Links on the Sidebar -->
+          <a href="https://scholar.google.com/citations?hl=en&user=Gk3u0MMAAAAJ" target="_blank"><img src="icons/google-scholar.svg" width="24" height="24"></a> &nbsp;
+          <a href="https://www.researchgate.net/profile/Junming-Duan?ev=hdr_xprf" target="_blank"><img src="icons/research-gate.svg" width="24" height="24"></a> &nbsp;
+          <a href="https://orcid.org/0000-0002-3532-9995" target="_blank"><img src="icons/orcid.svg" width="24" height="24"></a> &nbsp;
+          <a href="https://github.com/JunmingDuan" target="_blank"><img src="icons/github.svg" width="24" height="24"></a> &nbsp;
+          <a href="mailto:duanjm@pku.edu.cn" target="_blank"><img src="icons/mail.svg" width="26" height="26"></a> &nbsp;
+          </p>
+
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- end of personal -->
 
-    <!-- Entries Column -->
-    <div class="col-lg-8 col-xl-8">
+    <!-- start of education -->
+    <div class="bg-light p-3">
+      <div class="content-md container-fluid">
+        <h2 id="education">Education</h2>
+        <h5>Ph.D. in Computational Mathematics</h5>
+        <p>
+        Peking University, China | September 2016 -- July 2021<br>
+        Thesis: Entropy stable numerical methods for special
+        relativistic (magneto)hydrodynamics<br>
+        Advisor: <a href="https://www.math.pku.edu.cn/teachers/tanghz/private/homepage/" style="color:black">Prof. Huazhong Tang</a>
+        </p>
 
-      <div style="margin-top:0%; text-align:justify;">
-        <p>Welcome to my webpage. I am currently a Humboldt Research Fellow at
-        <a href="https://www.mathematik.uni-wuerzburg.de/en/" style="color:black" target="_blank">Institute of Mathematics</a>,
-        <a href="https://www.uni-wuerzburg.de/en/home/" style="color:black" target="_blank">University of Würzburg</a>,
-        working with
-        <a href="https://ifm.mathematik.uni-wuerzburg.de/~klingen/Welcome.html" style="color:black" target="_blank">Prof. Dr. Christian Klingenberg</a>.
-        Until September 2023, I was a postdoctoral researcher at
-        <a href="https://www.epfl.ch/labs/mcss/" style="color:black" target="_blank">MCSS</a>,
-        <a href="https://www.epfl.ch/en/" style="color:black" target="_blank">EPFL</a>,
-        working with
-        <a href="https://people.epfl.ch/jan.hesthaven?lang=en" style="color:black" target="_blank">Prof. Jan S. Hesthaven</a>.
-        I received my B.Sc. (2016) and Ph.D. (2021) at
-        <a href="https://www.pku.edu.cn/" style="color:black" target="_blank">Peking University</a>,
-        in <a href="https://www.math.pku.edu.cn/" style="color:black" target="_blank">School of Mathematical Sciences</a>,
-        supervised by <a href="https://www.math.pku.edu.cn/teachers/tanghz/private/homepage/" style="color:black" target="_blank">Prof. Huazhong Tang</a>.
-        My research primarily involves high-order accurate numerical methods
-        and reduced-order modeling.
+        <h5>B.Sc. in Information and Computing Science</h5>
+        <p>
+        Peking University, China | September 2012 -- July 2016<br>
         </p>
       </div>
-
-      <h2>Research Interests</h2>
-      <p>
-      <ul style="list-style-position:inside;margin:0px;padding:0px;">
-        <li>Numerical methods for hyperbolic conservation laws</li>
-        <li>Computational fluid dynamics</li>
-        <li>High-order accurate numerical methods</li>
-        <li>Structure-preserving methods</li>
-        <li>Moving mesh methods</li>
-        <li>Reduced-order modeling</li>
-        <li>Machine learning enhanced data-driven methods</li>
-      </ul>
-      </p>
-
-      <h2>Education</h2>
-      <h5>Ph.D. in Computational Mathematics</h5>
-      <p>
-      Peking University, China | September 2016 -- July 2021<br>
-      Thesis: Entropy stable numerical methods for special
-      relativistic (magneto)hydrodynamics<br>
-      Advisor: <a href="https://www.math.pku.edu.cn/teachers/tanghz/private/homepage/" style="color:black">Prof. Huazhong Tang</a>
-      </p>
-
-      <h5>B.Sc. in Information and Computing Science</h5>
-      <p>
-      Peking University, China | September 2012 -- July 2016<br>
-      </p>
     </div>
-  </div>
-</div>
+    <!-- end of education -->
 
-<!-- end of personal -->
-<!-- start of position -->
-<div class="bg-light p-3">
-<div class="content-md container-fluid">
-<h2 id="position">Academic Positions</h2>
-<ul>
-<li>October 2023 -- September 2025 | Humboldt Research Fellow | Institut für Mathematik, Universität Würzburg, Germany | Host Professor: <a href="https://ifm.mathematik.uni-wuerzburg.de/~klingen" style="color:black" target="_blank">Prof. Dr. Christian Klingenberg</a></li>
-<li>September 2021 -- September 2023 | Postdoctoral Researcher | MCSS, École Polytechnique Fédérale de Lausanne (EPFL), Switzerland | Mentor: <a href="https://people.epfl.ch/jan.hesthaven?lang=en" style="color:black" target="_blank">Prof. Jan S. Hesthaven</a></li>
-</ul>
+    <!-- start of position -->
+    <div class="p-3">
+      <div class="content-md container-fluid">
+        <h2 id="position">Academic Positions</h2>
+        <ul>
+          <li>October 2023 -- September 2025 | Humboldt Research Fellow</li>
+          Institut für Mathematik, Universität Würzburg, Germany | Host Professor: <a href="https://ifm.mathematik.uni-wuerzburg.de/~klingen" style="color:black" target="_blank">Prof. Dr. Christian Klingenberg</a>
+          <li>September 2021 -- September 2023 | Postdoctoral Researcher</li>
+          MCSS, École Polytechnique Fédérale de Lausanne (EPFL), Switzerland | Mentor: <a href="https://people.epfl.ch/jan.hesthaven?lang=en" style="color:black" target="_blank">Prof. Jan S. Hesthaven</a>
+        </ul>
 
-        </div>
+      </div>
     </div>
     <!-- end of position -->
-<!-- start of publication -->
-<div class="p-3">
-<div class="content-md container-fluid">
-<h2 id="publication">Research Publications</h2>
-<h4>Preprints</h4>
-<ol reversed start="17"><li>Z.H. Zhang, H.Z. Tang, and <b>J.M. Duan</b><sup>*</sup>,
-High-order accurate well-balanced energy stable finite difference schemes for multi-layer shallow water equations on fixed and adaptive moving meshes,  submitted to <i><b>J. Comput. Phys.</b></i>, 2023.
 
- [<a href="https://arxiv.org/abs/2311.08124" target="_blank">arXiv</a>]</li>
-<li><b>J.M. Duan</b>, B. Kovacic, and J.S. Hesthaven,
-Multi-GPU accelerated high-order schemes for hyperbolic conservation laws on adaptive moving meshes,  <i><b>in preparation</b></i>.
-</li>
-                    </ol>
-
-            <h4>Journal Articles</h4>
-        <ol reversed start="[{'author_en': 'J.M. Duan, Q. Wang, J.S. Hesthaven', 'title_en': 'Machine learning enhanced aerodynamic forces prediction based on sparse pressure sensor inputs', 'url': '', 'journal_en': 'AIAA J.', 'volume': '', 'issue': '', 'page': '', 'year': '2024', 'arXiv': '2305.09199', 'status': 'accepted', 'correspondence': 'false', 'date_ID': 20240206}, {'author_en': 'J.M. Duan, J.S. Hesthaven', 'title_en': 'Non-intrusive data-driven reduced-order modeling for time-dependent parametrized problems', 'url': 'https://doi.org/10.1016/j.jcp.2023.112621', 'journal_en': 'J. Comput. Phys.', 'volume': '497', 'issue': '', 'page': '112621', 'year': '2024', 'arXiv': '2303.02986', 'status': 'published', 'correspondence': 'true', 'date_ID': 20240115}, {'author_en': 'J. Wang, J.M. Duan, Z.W. Ma, W. Zhang', 'title_en': 'An adaptive moving mesh finite difference scheme for tokamak magneto-hydrodynamic simulations', 'url': 'https://doi.org/10.1016/j.cpc.2023.108951', 'journal_en': 'Comput. Phys. Commun.', 'volume': '294', 'issue': '', 'page': '108951', 'year': '2024', 'status': 'published', 'date_ID': 20240101}, {'author_en': 'Z.H. Zhang, J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate well-balanced energy stable adaptive moving mesh finite difference schemes for the shallow water equations with non-flat bottom topography', 'url': 'https://doi.org/10.1016/j.jcp.2023.112451', 'journal_en': 'J. Comput. Phys.', 'volume': '492', 'issue': '', 'page': '112451', 'year': '2023', 'arXiv': '2303.06924', 'status': 'published', 'correspondence': 'true', 'date_ID': 20231101}, {'author_en': 'S.T. Li, J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate entropy stable adaptive moving mesh finite difference schemes for (multi-component) compressible Euler equations with the stiffened equation of state', 'url': 'https://doi.org/10.1016/j.cma.2022.115311', 'journal_en': 'Comput. Methods Appl. Mech. Engrg.', 'volume': '399', 'issue': '', 'page': '115311', 'year': '2022', 'arXiv': '2202.07989', 'status': 'published', 'date_ID': 20220901}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate entropy stable adaptive moving mesh finite difference schemes for special relativistic (magneto)hydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2022.111038', 'journal_en': 'J. Comput. Phys.', 'volume': '456', 'issue': '', 'page': '111038', 'year': '2022', 'arXiv': '2107.12027', 'status': 'published', 'date_ID': 20220501}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'An analytical solution of the isentropic vortex problem in the special relativistic magnetohydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2021.110903', 'journal_en': 'J. Comput. Phys.', 'volume': '456', 'issue': '', 'page': '110903', 'year': '2022', 'arXiv': '2107.01966', 'status': 'published', 'date_ID': 20220501}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate entropy stable finite difference schemes for the shallow water magnetohydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2021.110136', 'journal_en': 'J. Comput. Phys.', 'volume': '431', 'issue': '', 'page': '110136', 'year': '2021', 'arXiv': '2003.10081', 'status': 'published', 'date_ID': 20210415}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'Entropy stable adaptive moving mesh schemes for 2D and 3D special relativistic hydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2020.109949', 'journal_en': 'J. Comput. Phys.', 'volume': '426', 'issue': '', 'page': '109949', 'year': '2021', 'arXiv': '2007.12884', 'status': 'published', 'date_ID': 20210201}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate entropy stable nodal discontinuous Galerkin schemes for the ideal special relativistic magnetohydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2020.109731', 'journal_en': 'J. Comput. Phys.', 'volume': '421', 'issue': '', 'page': '109731', 'year': '2020', 'arXiv': '1911.03825', 'status': 'published', 'date_ID': 20201115}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'High-order accurate entropy stable finite difference schemes for one- and two-dimensional special relativistic hydrodynamics', 'url': 'https://doi.org/10.4208/aamm.OA-2019-0124', 'journal_en': 'Adv. Appl. Math. Mech.', 'volume': '12', 'issue': '1', 'page': '1-29', 'year': '2020', 'arXiv': '1905.06092', 'status': 'published', 'date_ID': 20200201}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'An efficient ADER discontinuous Galerkin scheme for directly solving Hamilton-Jacobi equation', 'url': 'https://doi.org/10.4208/jcm.1902-m2018-0189', 'journal_en': 'J. Comput. Math.', 'volume': '38', 'issue': '1', 'page': '58-83', 'year': '2020', 'arXiv': '1901.10228', 'status': 'published', 'date_ID': 20200101}, {'author_en': 'D. Ling, J.M. Duan, H.Z. Tang', 'title_en': 'Physical-constraints-preserving Lagrangian finite volume schemes for one- and two-dimensional special relativistic hydrodynamics', 'url': 'https://doi.org/10.1016/j.jcp.2019.06.055', 'journal_en': 'J. Comput. Phys.', 'volume': '396', 'issue': '', 'page': '507-543', 'year': '2019', 'arXiv': '1901.10625', 'status': 'published', 'date_ID': 20191101}, {'author_en': 'J.M. Duan, H.Z. Tang', 'title_en': 'A second-order accurate scheme for a kinetic equation of two-dimensional Vicsek swarming model', 'journal_en': 'Nat. Sci. J. Xiangtan Univ.', 'author_zh': '段俊明, 汤华中', 'title_zh': '二维群集Vicsek模型的动理学方程的一个二阶精度格式', 'journal_zh': '湘潭大学学报自然科学版', 'url': 'http://www.jxtu.net/xtdxxbzr/ch/reader/view_abstract.aspx?file_no=201901001&flag=1', 'volume': '41', 'issue': '1', 'page': '1-14', 'year': '2019', 'status': 'published', 'date_ID': 20190201, 'chinese': 1}, {'author_en': 'J.M. Duan, Y.Y. Kuang, H.Z. Tang', 'title_en': 'Model reduction of a two-dimensional kinetic swarming model by operator projections', 'url': 'https://doi.org/10.4208/eajam.170617.141117a', 'journal_en': 'East Asian J. Appl. Math.', 'volume': '8', 'issue': '1', 'page': '151-180', 'year': '2018', 'arXiv': '1701.02888', 'status': 'published', 'date_ID': 20180201}]"><li><b>J.M. Duan</b>, Q. Wang, and J.S. Hesthaven,
-Machine learning enhanced aerodynamic forces prediction based on sparse pressure sensor inputs,  accepted by <i><b>AIAA J.</b></i>, 2024.
-
- [<a href="https://arxiv.org/abs/2305.09199" target="_blank">arXiv</a>]</li>
-<li><b>J.M. Duan</b><sup>*</sup> and J.S. Hesthaven,
-Non-intrusive data-driven reduced-order modeling for time-dependent parametrized problems, <i><b>J. Comput. Phys.</b></i>, 497: 112621, 2024.
-
- [<a href="https://arxiv.org/abs/2303.02986" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2023.112621" target="_blank">journal</a>]
-</li>
-<li>J. Wang, <b>J.M. Duan</b>, Z.W. Ma, and W. Zhang,
-An adaptive moving mesh finite difference scheme for tokamak magneto-hydrodynamic simulations, <i><b>Comput. Phys. Commun.</b></i>, 294: 108951, 2024.
-
-[<a href="https://doi.org/10.1016/j.cpc.2023.108951" target="_blank">journal</a>]
-</li>
-<li>Z.H. Zhang, <b>J.M. Duan</b><sup>*</sup>, and H.Z. Tang,
-High-order accurate well-balanced energy stable adaptive moving mesh finite difference schemes for the shallow water equations with non-flat bottom topography, <i><b>J. Comput. Phys.</b></i>, 492: 112451, 2023.
-
- [<a href="https://arxiv.org/abs/2303.06924" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2023.112451" target="_blank">journal</a>]
-</li>
-<li>S.T. Li, <b>J.M. Duan</b>, and H.Z. Tang,
-High-order accurate entropy stable adaptive moving mesh finite difference schemes for (multi-component) compressible Euler equations with the stiffened equation of state, <i><b>Comput. Methods Appl. Mech. Engrg.</b></i>, 399: 115311, 2022.
-
- [<a href="https://arxiv.org/abs/2202.07989" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.cma.2022.115311" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-High-order accurate entropy stable adaptive moving mesh finite difference schemes for special relativistic (magneto)hydrodynamics, <i><b>J. Comput. Phys.</b></i>, 456: 111038, 2022.
-
- [<a href="https://arxiv.org/abs/2107.12027" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2022.111038" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-An analytical solution of the isentropic vortex problem in the special relativistic magnetohydrodynamics, <i><b>J. Comput. Phys.</b></i>, 456: 110903, 2022.
-
- [<a href="https://arxiv.org/abs/2107.01966" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2021.110903" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-High-order accurate entropy stable finite difference schemes for the shallow water magnetohydrodynamics, <i><b>J. Comput. Phys.</b></i>, 431: 110136, 2021.
-
- [<a href="https://arxiv.org/abs/2003.10081" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2021.110136" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-Entropy stable adaptive moving mesh schemes for 2D and 3D special relativistic hydrodynamics, <i><b>J. Comput. Phys.</b></i>, 426: 109949, 2021.
-
- [<a href="https://arxiv.org/abs/2007.12884" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2020.109949" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-High-order accurate entropy stable nodal discontinuous Galerkin schemes for the ideal special relativistic magnetohydrodynamics, <i><b>J. Comput. Phys.</b></i>, 421: 109731, 2020.
-
- [<a href="https://arxiv.org/abs/1911.03825" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2020.109731" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-High-order accurate entropy stable finite difference schemes for one- and two-dimensional special relativistic hydrodynamics, <i><b>Adv. Appl. Math. Mech.</b></i>, 12(1): 1-29, 2020.
-
- [<a href="https://arxiv.org/abs/1905.06092" target="_blank">arXiv</a>][<a href="https://doi.org/10.4208/aamm.OA-2019-0124" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-An efficient ADER discontinuous Galerkin scheme for directly solving Hamilton-Jacobi equation, <i><b>J. Comput. Math.</b></i>, 38(1): 58-83, 2020.
-
- [<a href="https://arxiv.org/abs/1901.10228" target="_blank">arXiv</a>][<a href="https://doi.org/10.4208/jcm.1902-m2018-0189" target="_blank">journal</a>]
-</li>
-<li>D. Ling, <b>J.M. Duan</b>, and H.Z. Tang,
-Physical-constraints-preserving Lagrangian finite volume schemes for one- and two-dimensional special relativistic hydrodynamics, <i><b>J. Comput. Phys.</b></i>, 396: 507-543, 2019.
-
- [<a href="https://arxiv.org/abs/1901.10625" target="_blank">arXiv</a>][<a href="https://doi.org/10.1016/j.jcp.2019.06.055" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b> and H.Z. Tang,
-A second-order accurate scheme for a kinetic equation of two-dimensional Vicsek swarming model, <i><b>Nat. Sci. J. Xiangtan Univ.</b></i>, 41(1): 1-14, 2019.
- (in Chinese)
-[<a href="http://www.jxtu.net/xtdxxbzr/ch/reader/view_abstract.aspx?file_no=201901001&flag=1" target="_blank">journal</a>]
-</li>
-<li><b>J.M. Duan</b>, Y.Y. Kuang, and H.Z. Tang,
-Model reduction of a two-dimensional kinetic swarming model by operator projections, <i><b>East Asian J. Appl. Math.</b></i>, 8(1): 151-180, 2018.
-
- [<a href="https://arxiv.org/abs/1701.02888" target="_blank">arXiv</a>][<a href="https://doi.org/10.4208/eajam.170617.141117a" target="_blank">journal</a>]
-</li>
-
-        </div>
+    <!-- start of supervision -->
+    <div class="bg-light p-3">
+      <div class="content-md container-fluid">
+        <h2 id="service">Supervision</h2>
+        <ul>
+          <li><b>Master thesis</b>: GPU-accelerated numerical simulations of hyperbolic conservation laws using entropy stable schemes and adaptive moving mesh method</li>
+          Bartul Kovacic, EPFL (with Prof. Jan S. Hesthaven) | Fall 2023
+          <li><b>Master thesis</b>: Investigation of the aerosol evolution and delivery into the upper airway under transient conditions</li>
+          Filippo Zacchei, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
+          <li><b>Master thesis</b>: High-order entropy stable discontinuous Galerkin schemes using artificial viscosity</li>
+          Louis Vincent Marie Jaugey, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
+          <li><b>Semester project</b>: Scalable implementation of high-order entropy stable finite difference schemes</li>
+          Bartul Kovacic, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
+        </ul>
+      </div>
     </div>
-    <!-- end of publication -->
-<!-- start of award -->
-<div class="bg-light p-3">
-<div class="content-md container-fluid">
-<h2 id="award">Major Awards & Honors</h2>
-<ul>
-<li><b>Humboldt Research Fellowship for Postdoctoral Researchers</b> | Alexander von Humboldt Foundation | July 2023
-</li>
-<li><b>Outstanding Graduate of Peking University</b> | Peking University | July 2021
-</li>
-<li><b>National Scholarship for Graduate Student</b> | Ministry of Education of the P.R. China | December 2020
-</li>
-<li><b>The First Prize in Outstanding Youth Paper Award</b> | Beijing Society of Computational Mathematics | August 2020
-</li>
-<li><b>BICMR Scholarship for Graduate Student</b> | Beijing International Center for Mathematical Research | 2019--2020
-</li>
-<li><b>President Scholarship for PhD Student</b> | Peking University | 2018--2020
-</li>
-<li><b>Founder Scholarship</b> | Peking University | September 2019
-</li>
-<li><b>DTZ Cushman & Wakefield Scholarship</b> | Peking University | September 2017
-</li>
-<li><b>Outstanding Undergraduate of Peking University</b> | Peking University | July 2016
-</li>
-</ul>
+    <!-- end of supervision -->
 
-        </div>
+    <!-- start of service -->
+    <div class="p-3">
+      <div class="content-md container-fluid">
+        <h2 id="service">Professional Services</h2>
+        <ul>
+          <li><b>Reviewer/Referee for:</b></li>
+          <li style="list-style-type:none;">AMS Mathematical Reviews</li>
+          <li style="list-style-type:none;">Journal of Computational Physics</li>
+          <li style="list-style-type:none;">Journal of Computational and Applied Mathematics</li>
+          <li style="list-style-type:none;">Communications in Nonlinear Science and Numerical Simulation</li>
+          <li style="list-style-type:none;">International Journal for Numerical Methods in Engineering</li>
+          <li style="list-style-type:none;">East Asian Journal on Applied Mathematics</li>
+          <li style="list-style-type:none;">Communications in Computational Physics</li>
+          <li style="list-style-type:none;">Journal of Scientific Computing</li>
+          <li style="list-style-type:none;">International Journal of Computational Methods</li>
+          <li style="list-style-type:none;">Computational Geosciences</li>
+          <li style="list-style-type:none;">Numerical Methods for Partial Differential Equations</li>
+        </ul>
+      </div>
     </div>
-    <!-- end of award -->
-<!-- start of conference -->
-<div class="p-3">
-<div class="content-md container-fluid">
-<h2 id="conference">Conferences & Talks</h2>
-<ul>
-<li><b>Development of High-Order Methods for Hyperbolic PDEs</b> |
-Southern University of Science and Technology, Shenzhen, China | March 15-19, 2024
-</li>
-<li><b>Network Meeting of the Alexander von Humboldt Foundation</b> |
-Universität Konstanz, Konstanz, Germany | February 21-23, 2024
-</li>
-<li><b>XVII. Würzburg Workshop on Stellar Astrophysics in Heidelberg</b> |
-Heidelberg Institute for Theoretical Studies (HITS), Heidelberg, Germany | December 18-19, 2023
- | Plenary talk: Adaptive moving mesh methods in hydrodynamics
-</li>
-<li><b>CAM Seminar</b> |
-Southern University of Science and Technology, Shenzhen, China | July 01, 2023
- | Talk: Machine learning based non-intrusive reduced-order modeling and aerodynamic forces prediction
-</li>
-<li><b>ECCOMAS YIC 2023: 7th Young Investigators Conference</b> |
-University of Porto, Porto, Portugal | June 19-21, 2023
- | Talk: Non-intrusive data-driven reduced-order modeling for time-dependent parametrized problems
-</li>
-<li><b>Swiss Numerics Day 2023</b> |
-Universität Bern, Bern, Switzerland | June 07, 2023
- | Talk: Machine learning enhanced aerodynamic forces prediction based on sparse pressure sensor inputs
-</li>
-<li><b>Oberseminar</b> |
- host by Prof. Christian Klingenberg, online | November 17, 2022
- | Talk: Data-driven reduced-order modeling for time-dependent parametrized problems
-</li>
-<li><b>MultiMat 2022: 10th International Conference on Numerical Methods for Multi-Material Fluid Flow</b> |
-Universität Zürich, Zürich, Switzerland | August 22-26, 2022
- | Talk: High-order accurate entropy stable adaptive moving mesh methods
-</li>
-<li><b>Symposium on High-Fidelity Numerical Simulation of Fluid Problems</b> |
-Peking University, Beijing, China | June 05-07, 2021
- | Talk: Entropy stable schemes for RHD
-</li>
-<li><b>Forum of Numerical Methods and Applications in Fluids</b> |
-Xiangtan University, Xiangtan, China | December 11-13, 2020
- | Talk: Entropy stable adaptive moving mesh schemes for RHD
-</li>
-<li><b>Annual Meeting on High Resolution Method for Multi-Material Hydrodynamics of Science Challenge Project</b> |
-Xiamen University, Xiamen, China | November 29-December 01, 2019
- | Talk: PCP Lagrangian scheme for RHD
-</li>
-<li><b>Workshop on Numerical Methods for Complex Physical Problems</b> |
-Nanjing University of Aeronautics and Astronautics, Nanjing, China | August 28-30, 2019
- | Talk: High-order entropy stable finite difference schemes for RHD
-</li>
-<li><b>The 12th National Annual Meeting of Computational Mathematics</b> |
-Harbin, China | July 31-August 04, 2019
- | Talk: High-order entropy stable finite difference schemes for RHD
-</li>
-<li><b>Annual Meeting of Science Challenge Project</b> |
-Jilin University, Changchun, China | November 17-19, 2018
- | Talk: PCP Lagrangian scheme for RHD (with Dan Ling), selected as one of the five best posters
-</li>
-<li><b>Beijing Seminar on Computational Fluid Dynamics</b> |
-Beijing Institute of Applied Physics and Computational Mathematics, Beijing, China | November 11, 2018
- | Talk: PCP Lagrangian scheme for RHD
-</li>
-</ul>
+    <!-- end of service -->
 
-        </div>
+    <!-- start of skill -->
+    <div class="bg-light p-3">
+      <div class="content-md container-fluid">
+        <h2 id="skills">Skills</h2>
+        C, C++, Python, Julia, MATLAB, Fortran, MPI, PyTorch, OpenFOAM, PETSc, Linux shell, LaTeX
+      </div>
     </div>
-    <!-- end of conference -->
-<!-- start of teaching -->
-<div class="bg-light p-3">
-<div class="content-md container-fluid">
-<h2 id="teaching">Teaching Assistant</h2>
-<ul>
-<li><b>Analysis III</b> |
-École Polytechnique Fédérale de Lausanne | Fall 2022
-</li>
-<li><b>Advanced Analysis I</b> |
-École Polytechnique Fédérale de Lausanne | Fall 2021
-</li>
-<li><b>Numerical Methods of Partial Differential Equations</b> |
-Peking University | Fall 2019
-</li>
-<li><b>Linear Algebra B</b> |
-Peking University | Fall 2018
-</li>
-<li><b>Advanced Algebra II</b> |
-Peking University | Spring 2018
-</li>
-<li><b>Linear Algebra B</b> |
-Peking University | Fall 2017
-</li>
-<li><b>Mathematical Modeling</b> |
-Peking University | Spring 2017
-</li>
-<li><b>Partial Differential Equations</b> |
-Peking University | Fall 2016
-</li>
-</ul>
+    <!-- end of skill -->
 
-        </div>
+    <!-- start of ClustrMaps -->
+    <div class="p-3">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=m&d=vOOre4cNnN35nQaSXJdOu7BmOqYqkyh2Q5t0A3KBeCI'></script>
+      </div>
     </div>
-    <!-- end of teaching -->
-<!-- start of supervision -->
-<div class="p-3">
-  <div class="content-md container-fluid">
-    <h2 id="service">Supervision</h2>
-    <ul>
-      <li><b>Master thesis</b>: GPU-accelerated numerical simulations of hyperbolic conservation laws using entropy stable schemes and adaptive moving mesh method</li>
-      Bartul Kovacic, EPFL (with Prof. Jan S. Hesthaven) | Fall 2023
-      <li><b>Master thesis</b>: Investigation of the aerosol evolution and delivery into the upper airway under transient conditions</li>
-      Filippo Zacchei, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
-      <li><b>Master thesis</b>: High-order entropy stable discontinuous Galerkin schemes using artificial viscosity</li>
-      Louis Vincent Marie Jaugey, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
-      <li><b>Semester project</b>: Scalable implementation of high-order entropy stable finite difference schemes</li>
-      Bartul Kovacic, EPFL (with Prof. Jan S. Hesthaven) | Fall 2022
-    </ul>
-  </div>
-</div>
+    <!-- end of ClustrMaps -->
 
-<!-- end of supervision -->
-<!-- start of service -->
-<div class="bg-light p-3">
-  <div class="content-md container-fluid">
-    <h2 id="service">Professional Services</h2>
-    <ul>
-      <li><b>Reviewer/Referee for:</b></li>
-        <li style="list-style-type:none;">AMS Mathematical Reviews</li>
-        <li style="list-style-type:none;">Journal of Computational Physics</li>
-        <li style="list-style-type:none;">Journal of Computational and Applied Mathematics</li>
-        <li style="list-style-type:none;">Communications in Nonlinear Science and Numerical Simulation</li>
-        <li style="list-style-type:none;">International Journal for Numerical Methods in Engineering</li>
-        <li style="list-style-type:none;">East Asian Journal on Applied Mathematics</li>
-        <li style="list-style-type:none;">Communications in Computational Physics</li>
-        <li style="list-style-type:none;">Journal of Scientific Computing</li>
-        <li style="list-style-type:none;">International Journal of Computational Methods</li>
-        <li style="list-style-type:none;">Computational Geosciences</li>
-        <li style="list-style-type:none;">Numerical Methods for Partial Differential Equations</li>
-    </ul>
-  </div>
-</div>
-
-<!-- end of service -->
-<!-- start of skill -->
-<div class="p-3">
-  <div class="content-md container-fluid">
-    <h2 id="skills">Skills</h2>
-    C, C++, Python, Julia, MATLAB, Fortran, MPI, PyTorch, OpenFOAM, PETSc, Linux shell, LaTeX
-  </div>
-</div>
-
-<!-- end of skill -->
-<!-- start of ClustrMaps -->
-<div class="p-3">
-  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=m&d=vOOre4cNnN35nQaSXJdOu7BmOqYqkyh2Q5t0A3KBeCI'></script>
-  </div>
-</div>
-
-<!-- end of ClustrMaps -->
-
-        </body>
-
-    </html>
+  </body>
+</html>

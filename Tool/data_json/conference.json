@@ -1,5 +1,27 @@
 [
   {
+    "title_en": "High-Order NOnlinear numerical Methods for evolutionary PDEs: theory and applications, HONOM",
+    "location_en": "Chania, Crete Island, Greece",
+    "description_en": "Talk: On limiting for the active flux methods for hyperbolic conservation laws",
+    "date_en": "September 08-13, 2024",
+    "title_zh": "时间演化PDE的高阶非线性数值方法",
+    "location_zh": "干尼亚，克里特岛，希腊",
+    "description_zh": "",
+    "date_zh": "2024, 09.08-13",
+    "date_ID": 20240908
+  },
+  {
+    "title_en": "Seminar Talk",
+    "location_en": "Southern University of Science and Technology, Shenzhen, China",
+    "description_en": "Talk: Bound-preserving active flux methods for one-dimensional hyperbolic conservation laws and flux vector splitting for point value update",
+    "date_en": "March 21, 2024",
+    "title_zh": "讨论班",
+    "location_zh": "南方科技大学",
+    "description_zh": "",
+    "date_zh": "2024, 03.21",
+    "date_ID": 20240321
+  },
+  {
     "title_en": "Development of High-Order Methods for Hyperbolic PDEs",
     "location_en": "Southern University of Science and Technology, Shenzhen, China",
     "description_en": "",
@@ -9,6 +31,17 @@
     "description_zh": "",
     "date_zh": "2024, 03.15-19",
     "date_ID": 20240315
+  },
+  {
+    "title_en": "Simultaneously used Point values, Averages and Moments and their Inter-Relation: Active Flux, Multi-Moment Method, Virtual Finite Elements and related numerical methods",
+    "location_en": "Maxwell Center, Cambridge, UK",
+    "description_en": "Talk: Flux-vector splitting for point value update in active flux methods and limiting",
+    "date_en": "March 06-08, 2024",
+    "title_zh": "同时使用点值、平均值和矩及其相互关系: Active Flux、多矩法、虚拟有限元及相关数值方法",
+    "location_zh": "麦克斯韦中心，剑桥",
+    "description_zh": "",
+    "date_zh": "2024, 03.06-08",
+    "date_ID": 20240306
   },
   {
     "title_en": "Network Meeting of the Alexander von Humboldt Foundation",

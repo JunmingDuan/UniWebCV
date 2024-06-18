@@ -22,3 +22,13 @@ def read_block_html(block, block_dir):
     block_file.close()
     return block_html
 
+# def read_page_template(block, block_dir):
+    # '''Read in the block info directly from the file "block.html"'''
+    # block_file = open(block_dir+block+"_template.html", 'r')
+    # print("> Read in "+block+" from "+block+".html.")
+    # block_html = "<!-- start of "+block+" -->\n";
+    # block_html += block_file.read();
+    # block_html += "<!-- end of "+block+" -->\n";
+    # block_file.close()
+    # return block_html
+

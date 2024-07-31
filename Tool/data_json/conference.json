@@ -11,6 +11,17 @@
     "date_ID": 20240908
   },
   {
+    "title_en": "Lecture Series of Modern Computational Methods",
+    "location_en": "Beijing Institute of Applied Physics and Computational Mathematics (online)",
+    "description_en": "Talk: Entropy stable schemes for hyperbolic conservation laws",
+    "date_en": "July 27, 2024",
+    "title_zh": "现代计算方法系列讲座",
+    "location_zh": "北京应用物理与计算数学研究所",
+    "description_zh": "",
+    "date_zh": "2024, 07.27",
+    "date_ID": 20240727
+  },
+  {
     "title_en": "Seminar Talk",
     "location_en": "Southern University of Science and Technology, Shenzhen, China",
     "description_en": "Talk: Bound-preserving active flux methods for one-dimensional hyperbolic conservation laws and flux vector splitting for point value update",

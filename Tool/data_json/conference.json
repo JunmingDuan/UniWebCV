@@ -1,8 +1,19 @@
 [
   {
+    "title_en": "XVIII. Würzburg Workshop on Stellar Astrophysics",
+    "location_en": "Heidelberg Institute for Theoretical Studies (HITS), Heidelberg, Germany",
+    "description_en": "Talk: On limiting for the Active Flux methods for hyperbolic conservation laws",
+    "date_en": "December 09-11, 2024",
+    "title_zh": "第十八届维尔茨堡天体物理研讨会",
+    "location_zh": "海德堡理论研究所",
+    "description_zh": "",
+    "date_zh": "2024, 12.09-11",
+    "date_ID": 20241209
+  },
+  {
     "title_en": "High-Order NOnlinear numerical Methods for evolutionary PDEs: theory and applications, HONOM",
     "location_en": "Chania, Crete Island, Greece",
-    "description_en": "Talk: On limiting for the active flux methods for hyperbolic conservation laws",
+    "description_en": "Talk: On limiting for the Active Flux methods for hyperbolic conservation laws",
     "date_en": "September 08-13, 2024",
     "title_zh": "时间演化PDE的高阶非线性数值方法",
     "location_zh": "干尼亚，克里特岛，希腊",
@@ -55,22 +66,11 @@
     "date_ID": 20240306
   },
   {
-    "title_en": "Network Meeting of the Alexander von Humboldt Foundation",
-    "location_en": "Universität Konstanz, Konstanz, Germany",
-    "description_en": "",
-    "date_en": "February 21-23, 2024",
-    "title_zh": "洪堡基金会学者会议",
-    "location_zh": "康斯坦茨大学",
-    "description_zh": "",
-    "date_zh": "2024, 02.21-23",
-    "date_ID": 20240221
-  },
-  {
-    "title_en": "XVII. Würzburg Workshop on Stellar Astrophysics in Heidelberg",
+    "title_en": "XVII. Würzburg Workshop on Stellar Astrophysics",
     "location_en": "Heidelberg Institute for Theoretical Studies (HITS), Heidelberg, Germany",
     "description_en": "Plenary talk: Adaptive moving mesh methods in hydrodynamics",
     "date_en": "December 18-19, 2023",
-    "title_zh": "第十六届维尔茨堡天体物理研讨会",
+    "title_zh": "第十七届维尔茨堡天体物理研讨会",
     "location_zh": "海德堡理论研究所",
     "description_zh": "流体力学中的自适应移动网格方法",
     "date_zh": "2023, 12.18-19",
@@ -111,7 +111,7 @@
   },
   {
     "title_en": "Oberseminar",
-    "location_en": " host by Prof. Christian Klingenberg, online",
+    "location_en": " hosted by Prof. Christian Klingenberg, online",
     "description_en": "Talk: Data-driven reduced-order modeling for time-dependent parametrized problems",
     "date_en": "November 17, 2022",
     "title_zh": "",

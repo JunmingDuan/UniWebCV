@@ -1,18 +1,18 @@
 [
   {
     "author_en": "J.M. Duan, W. Barsukow, C. Klingenberg",
-    "title_en": "Active flux methods for hyperbolic conservation laws -- flux vector splitting and bound-preservation: Two-dimensional case",
+    "title_en": "Active flux methods for hyperbolic conservation laws -- flux vector splitting and bound-preservation",
     "url": "",
-    "journal_en": "SIAM J. Sci. Comput.",
-    "abstract_en": "This paper studies the active flux (AF) methods for two-dimensional hyperbolic conservation laws, focusing on the flux vector splitting (FVS) for the point value update and bound-preserving (BP) limitings, which is an extension of our previous work [J.M. Duan, W. Barsukow, C. Klingenberg, arXiv:2405.02447]. The FVS-based point value update is shown to address the mesh alignment issue that appeared in a quasi-2D Riemann problem along one axis direction on Cartesian meshes. Consequently, the AF methods based on the FVS outperform those using Jacobian splitting, which are prone to transonic and mesh alignment issues. A shock sensor-based limiting is proposed to enhance the convex limiting for the cell average, which can reduce oscillations well. Some benchmark problems are tested to verify the accuracy, BP property, and shock-capturing ability of our BP AF method. Moreover, for the double Mach reflection and forward-facing step problems, the present AF method can capture comparable or better small-scale features compared to the third-order discontinuous Galerkin method with the TVB limiter on the same mesh resolution, while using fewer degrees of freedom, demonstrating the efficiency and potential of our BP AF method for high Mach number flows.",
+    "journal_en": "SIAM J. Sci. Comput., in revision",
+    "abstract_en": "The active flux (AF) method is a compact high-order finite volume method that evolves cell averages and point values at cell interfaces independently. Within the method of lines framework, the point value can be updated based on Jacobian splitting (JS), incorporating the upwind idea. However, such JS-based AF methods encounter transonic issues for nonlinear problems due to inaccurate upwind direction estimation. This paper proposes to use flux vector splitting for the point value update, offering a natural and uniform remedy to the transonic issue. To improve robustness, this paper also develops bound-preserving (BP) AF methods for one-dimensional hyperbolic conservation laws. Two cases are considered: preservation of the maximum principle for the scalar case, and preservation of positive density and pressure for the compressible Euler equations. The update of the cell average in high-order AF methods is rewritten as a convex combination of using the original high-order fluxes and robust low-order (local Lax-Friedrichs or Rusanov) fluxes, and the desired bounds are enforced by choosing the right amount of low-order fluxes. A similar blending strategy is used for the point value update. Several challenging benchmark tests are conducted to verify the accuracy, BP properties, and shock-capturing ability of the methods.",
     "volume": "",
     "issue": "",
     "page": "",
     "year": "2024",
-    "arXiv": "2407.13380",
+    "arXiv": "2405.02447",
     "status": "submitted",
     "correspondence": "true",
-    "date_ID": 202407019
+    "date_ID": 20241022
   },
   {
     "author_en": "J. Wang, Y. Zhou, J.M. Duan, Z.W. Ma, W. Zhang",
@@ -26,21 +26,6 @@
     "year": "2024",
     "status": "submitted",
     "date_ID": 20240602
-  },
-  {
-    "author_en": "J.M. Duan, W. Barsukow, C. Klingenberg",
-    "title_en": "Active flux methods for hyperbolic conservation laws -- flux vector splitting and bound-preservation: One-dimensional case",
-    "url": "",
-    "journal_en": "SIAM J. Sci. Comput.",
-    "abstract_en": "The active flux (AF) method is a compact high-order finite volume method that evolves cell averages and point values at cell interfaces independently. Within the method of lines framework, the point value can be updated based on Jacobian splitting (JS), incorporating the upwind idea. However, such JS-based AF methods encounter transonic issues for nonlinear problems due to inaccurate upwind direction estimation. This paper proposes to use flux vector splitting for the point value update, offering a natural and uniform remedy to the transonic issue. To improve robustness, this paper also develops bound-preserving (BP) AF methods for one-dimensional hyperbolic conservation laws. Two cases are considered: preservation of the maximum principle for the scalar case, and preservation of positive density and pressure for the compressible Euler equations. The update of the cell average in high-order AF methods is rewritten as a convex combination of using the original high-order fluxes and robust low-order (local Lax-Friedrichs or Rusanov) fluxes, and the desired bounds are enforced by choosing the right amount of low-order fluxes. A similar blending strategy is used for the point value update. Several challenging benchmark tests are conducted to verify the accuracy, BP properties, and shock-capturing ability of the methods.",
-    "volume": "",
-    "issue": "",
-    "page": "",
-    "year": "2024",
-    "arXiv": "2405.02447",
-    "status": "submitted",
-    "correspondence": "true",
-    "date_ID": 20240503
   },
   {
     "author_en": "J.M. Duan, B. Kovacic, J.S. Hesthaven",

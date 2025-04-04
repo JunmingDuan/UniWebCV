@@ -1,4 +1,4 @@
-me = { "en": "J.M. Duan",
+me = { "en": "Junming Duan",
        "zh": "段俊明"}
 
 def author_CV(author, language="en", correspondence=False):

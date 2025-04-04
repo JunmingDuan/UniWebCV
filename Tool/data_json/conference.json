@@ -1,14 +1,15 @@
 [
   {
-    "title_en": "XVIII. Würzburg Workshop on Stellar Astrophysics",
-    "location_en": "Heidelberg Institute for Theoretical Studies (HITS), Heidelberg, Germany",
-    "description_en": "Talk: On limiting for the Active Flux methods for hyperbolic conservation laws",
-    "date_en": "December 09-11, 2024",
-    "title_zh": "第十八届维尔茨堡天体物理研讨会",
-    "location_zh": "海德堡理论研究所",
+    "title_en": "Mobility Innovation eXchange in Aero/Acoustics (MIXA)",
+    "location_en": "The Ohio State University, USA (online)",
+    "description_en": "Keynote Speaker: Machine-learning-enhanced aerodynamic forces prediction based on sparse pressure sensor inputs",
+    "date_en": "May 06, 2025",
+    "title_zh": "时间演化PDE的高阶非线性数值方法",
+    "location_zh": "俄亥俄州立大学，美国",
     "description_zh": "",
-    "date_zh": "2024, 12.09-11",
-    "date_ID": 20241209
+    "more": "files/talks/MIXA_Spring_2025.pdf",
+    "date_zh": "2025, 05.06",
+    "date_ID": 20250506
   },
   {
     "title_en": "High-Order NOnlinear numerical Methods for evolutionary PDEs: theory and applications, HONOM",
@@ -16,7 +17,7 @@
     "description_en": "Talk: On limiting for the Active Flux methods for hyperbolic conservation laws",
     "date_en": "September 08-13, 2024",
     "title_zh": "时间演化PDE的高阶非线性数值方法",
-    "location_zh": "干尼亚，克里特岛，希腊",
+    "location_zh": "哈尼亚，克里特岛，希腊",
     "description_zh": "",
     "date_zh": "2024, 09.08-13",
     "date_ID": 20240908
@@ -56,7 +57,7 @@
   },
   {
     "title_en": "Simultaneously used Point values, Averages and Moments and their Inter-Relation: Active Flux, Multi-Moment Method, Virtual Finite Elements and related numerical methods",
-    "location_en": "Maxwell Center, Cambridge, UK",
+    "location_en": "Maxwell Center, Cambridge, UK (online)",
     "description_en": "Talk: Flux-vector splitting for point value update in active flux methods and limiting",
     "date_en": "March 06-08, 2024",
     "title_zh": "同时使用点值、平均值和矩及其相互关系: Active Flux、多矩法、虚拟有限元及相关数值方法",
@@ -111,7 +112,7 @@
   },
   {
     "title_en": "Oberseminar",
-    "location_en": " hosted by Prof. Christian Klingenberg, online",
+    "location_en": " hosted by Prof. Christian Klingenberg (online)",
     "description_en": "Talk: Data-driven reduced-order modeling for time-dependent parametrized problems",
     "date_en": "November 17, 2022",
     "title_zh": "",

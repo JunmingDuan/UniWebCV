@@ -1,4 +1,4 @@
-me = { "en": "J.M. Duan",
+me = { "en": "Junming Duan",
        "zh": "段俊明"}
 
 def author_web(author, language="en", correspondence=False):
@@ -51,27 +51,27 @@ def publication_entry_web(article, index, language="en"):
         article_html += "<i><b>"+article["journal"+"_"+language]+"</b></i>, "
         #volume(issue), page, year
         article_html += article["volume"]
-        if(article.get("issue") != ""):
+        if article.get("issue"):
             article_html += "("+article["issue"]+"): "
         else:
             article_html += ": "
         article_html += article["page"]+", "+article["year"]+".\n"
     elif(article.get("status") == "accepted"):
-        if article.get("arXiv" != ""):
+        if article.get("arXiv"):
             article_html += ' accepted by <i><b>'+article["journal"+"_"+language]+"</b></i>, "
             article_html += ' arXiv:'+article.get("arXiv")
         else:
             article_html += ' accepted by <i><b>'+article["journal"+"_"+language]+"</b></i>"
         article_html += ", "+article["year"]+".\n"
     elif(article.get("status") == "submitted"):
-        if article.get("arXiv" != ""):
-            if article.get("journal"+"_"+language) != "":
+        if article.get("arXiv"):
+            if article.get("journal"+"_"+language):
                 article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>, "
             else:
                 article_html += ' submitted, '
             article_html += ' arXiv:'+article.get("arXiv")
         else:
-            if article.get("journal"+"_"+language) != "":
+            if article.get("journal"+"_"+language):
                 article_html += ' submitted to <i><b>'+article["journal"+"_"+language]+"</b></i>"
             else:
                 article_html += ' submitted'
@@ -94,8 +94,7 @@ def publication_entry_web(article, index, language="en"):
         article_html += '[<a href="'+article.get("url")+'" target="_blank">journal</a>]'
     #abstract
     if(article.get("abstract"+"_"+language)):
-        article_html += r"""<button
-        class="unstyled-button"onclick="switchAbstract('abstract"""+str(index)+"""', '"""+article.get("abstract"+"_"+language)+"""')">[<a class=".text-primary">abstract</a>] </button> <div id='abstract"""+str(index)+"""'></div>"""
+        article_html += r"""<button class="unstyled-button"onclick="switchAbstract('abstract"""+str(index)+"""', '"""+article.get("abstract"+"_"+language)+"""')">[<a class=".text-primary">abstract</a>] </button> <div id='abstract"""+str(index)+"""'></div>"""
 
     article_html += "</li>\n\n"
 
@@ -146,7 +145,7 @@ def conference_entry_web(conference, index, language="en"):
     '''
     conference_html = "<li>"
     #title
-    if conference["title"+"_"+language] != "":
+    if conference["title"+"_"+language]:
         conference_html += "<b>"+conference["title"+"_"+language]+"</b> |\n"
     #[location] [online], PERIOD.
     if(conference.get("online") == 1):
@@ -161,6 +160,10 @@ def conference_entry_web(conference, index, language="en"):
             conference_html += " | "+conference["description"+"_"+language]+"\n"
         else:
             conference_html += " | "+conference["description"+"_"+language]+"\n"
+
+    if conference.get("more"):
+        conference_html += '[<a href="'+conference.get("more")+'"target="_blank">more</a>]'
+
     conference_html += "</li>\n"
 
     return conference_html
